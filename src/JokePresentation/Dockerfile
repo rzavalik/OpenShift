@@ -22,6 +22,9 @@ RUN dotnet build "JokePresentation.csproj" -c Release -o /app/build \
 FROM base AS final
 WORKDIR /app
 
+# Install curl and clean up to reduce image size
+RUN apt-get update && apt-get install -y curl && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Copy the published files from the build stage
 COPY --from=build /app/publish .
 

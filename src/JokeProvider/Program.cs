@@ -1,11 +1,12 @@
 using System.Text.Json;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHealthChecks();
+builder.Configuration.AddEnvironmentVariables();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
@@ -16,13 +17,19 @@ app.MapGet("/", () =>
 
 app.MapGet("/api", () =>
 {
-    var jokesJson = File.ReadAllText("jokes.json");
-    var jokes = JsonSerializer.Deserialize<string[]>(jokesJson)
+    string jokesPath = builder.Configuration["Jokes:FilePath"] ?? "jokes.json";
+    if (!File.Exists(jokesPath))
+    {
+        jokesPath = "jokes.json";
+    }
+
+    string jokesJson = File.ReadAllText(jokesPath);
+    string[]? jokes = JsonSerializer.Deserialize<string[]>(jokesJson)
                     ?.Select(joke => joke)
                     ?.ToArray();
-    var randomJoke = jokes == null ? null : jokes[new Random().Next(jokes.Length)];
+    string? randomJoke = jokes == null ? null : jokes[new Random().Next(jokes.Length)];
     randomJoke ??= "Null não é piada.";
-    var machineName = Environment.MachineName;
+    string machineName = Environment.MachineName;
 
     return Results.Ok(new { joke = randomJoke, server = machineName });
 });

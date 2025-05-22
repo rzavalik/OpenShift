@@ -18,3 +18,18 @@ spec:
           image: image-registry.openshift-image-registry.svc:5000/zavalik-dev/joke-provider:latest
           ports:
             - containerPort: 5000
+          env:
+            - name: JOKES__FILEPATH
+              value: /app/data/jokes.json
+          volumeMounts:
+            - name: jokes-volume
+              mountPath: /app/data
+          resources:
+            requests:
+              cpu: "50m"
+            limits:
+              cpu: "250m"
+      volumes:
+        - name: jokes-volume
+          persistentVolumeClaim:
+            claimName: jokes-pvc

@@ -10,6 +10,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokePresentation", "src\Jok
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "openshift", "openshift", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "jokepresentation", "jokepresentation", "{454EE4C0-C883-401C-87F9-02D3C886E5C4}"
+	ProjectSection(SolutionItems) = preProject
+		openshift\jokepresentation\buildconfig.yaml = openshift\jokepresentation\buildconfig.yaml
+		openshift\jokepresentation\deployment.yaml = openshift\jokepresentation\deployment.yaml
+		openshift\jokepresentation\hpa.yaml = openshift\jokepresentation\hpa.yaml
+		openshift\jokepresentation\imagestream.yaml = openshift\jokepresentation\imagestream.yaml
+		openshift\jokepresentation\route.yaml = openshift\jokepresentation\route.yaml
+		openshift\jokepresentation\service.yaml = openshift\jokepresentation\service.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "jokeprovider", "jokeprovider", "{889B28F3-6340-4BBB-AD10-C4D91438C54B}"
+	ProjectSection(SolutionItems) = preProject
+		openshift\jokeprovider\buildconfig.yaml = openshift\jokeprovider\buildconfig.yaml
+		openshift\jokeprovider\deployment.yaml = openshift\jokeprovider\deployment.yaml
+		openshift\jokeprovider\hpa.yaml = openshift\jokeprovider\hpa.yaml
+		openshift\jokeprovider\imagestream.yaml = openshift\jokeprovider\imagestream.yaml
+		openshift\jokeprovider\pvc.yaml = openshift\jokeprovider\pvc.yaml
+		openshift\jokeprovider\service.yaml = openshift\jokeprovider\service.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +51,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{ED20978E-4042-B2CE-568F-79AB1D586A6A} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{6607808B-2760-3599-EB7C-58FCC4B79C33} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{454EE4C0-C883-401C-87F9-02D3C886E5C4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{889B28F3-6340-4BBB-AD10-C4D91438C54B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3DB7D60-D935-4C6A-AEF7-0B20EB7379D0}

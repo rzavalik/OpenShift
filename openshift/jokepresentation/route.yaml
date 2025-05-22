@@ -8,6 +8,6 @@ spec:
     kind: Service
     name: joke-presentation
   port:
-    targetPort: 80
+    targetPort: 8080
   tls:
     termination: edge

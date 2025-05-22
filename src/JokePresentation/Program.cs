@@ -8,7 +8,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
         // Add environment variables and other services
         builder.Configuration
@@ -18,7 +18,7 @@ public class Program
         builder.Services.AddHttpClient();
         builder.Services.AddHealthChecks();
 
-        var app = builder.Build();
+        WebApplication app = builder.Build();
 
         // Middleware for error handling and HSTS (HTTP Strict Transport Security)
         if (!app.Environment.IsDevelopment())
@@ -32,14 +32,10 @@ public class Program
         app.UseRouting();
         app.UseAuthorization();
 
-        // Add static assets (e.g., CSS, JS)
-        app.MapStaticAssets();
-
         // Define the route for MVC Controllers
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}")
-            .WithStaticAssets();
+            pattern: "{controller=Home}/{action=Index}/{id?}");
 
         // Define health route
         app.MapHealthChecks("/health");

@@ -8,17 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokeProvider", "src\JokePro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokePresentation", "src\JokePresentation\JokePresentation.csproj", "{6607808B-2760-3599-EB7C-58FCC4B79C33}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "terraform", "terraform", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		terraform\main.tf = terraform\main.tf
-		terraform\variables.tf = terraform\variables.tf
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "swarm", "swarm", "{45FA18C4-9F5A-4FD0-8F40-AB8392448458}"
-	ProjectSection(SolutionItems) = preProject
-		swarm\docker-compose.yml = swarm\docker-compose.yml
-		swarm\start.sh = swarm\start.sh
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "openshift", "openshift", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

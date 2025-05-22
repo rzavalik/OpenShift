@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joke-provider
+  namespace: zavalik-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: joke-provider
+  template:
+    metadata:
+      labels:
+        app: joke-provider
+    spec:
+      containers:
+        - name: joke-provider
+          image: image-registry.openshift-image-registry.svc:5000/zavalik-dev/joke-provider:latest
+          ports:
+            - containerPort: 5000

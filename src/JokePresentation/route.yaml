@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: joke-presentation
+  namespace: zavalik-dev
+spec:
+  to:
+    kind: Service
+    name: joke-presentation
+  port:
+    targetPort: 80
+  tls:
+    termination: edge

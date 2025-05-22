@@ -1,0 +1,17 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: joke-presentation
+  namespace: zavalik-dev
+spec:
+  source:
+    git:
+      uri: https://github.com/rzavalik/OpenShift.git
+    contextDir: src/JokePresentation
+  strategy:
+    type: Docker
+    dockerStrategy: {}
+  output:
+    to:
+      kind: ImageStreamTag
+      name: joke-presentation:latest

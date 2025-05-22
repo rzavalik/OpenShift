@@ -17,6 +17,7 @@ public class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddHttpClient();
         builder.Services.AddHealthChecks();
+        builder.WebHost.UseUrls(Environment.GetEnvironmentVariable("ASPNETCORE_URLS") ?? "http://*:8080");
 
         WebApplication app = builder.Build();
 

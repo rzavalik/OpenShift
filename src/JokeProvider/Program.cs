@@ -5,6 +5,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHealthChecks();
 builder.Configuration.AddEnvironmentVariables();
+builder.WebHost.UseUrls(Environment.GetEnvironmentVariable("ASPNETCORE_URLS") ?? "http://*:8080");
 
 WebApplication app = builder.Build();
 app.UseSwagger();

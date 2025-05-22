@@ -19,6 +19,8 @@ spec:
           ports:
             - containerPort: 5000
           env:
+            - name: ASPNETCORE_URLS
+              value: http://*:5000
             - name: JOKES__FILEPATH
               value: /app/data/jokes.json
           volumeMounts:

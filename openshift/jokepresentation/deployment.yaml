@@ -17,7 +17,9 @@ spec:
         - name: joke-presentation
           image: image-registry.openshift-image-registry.svc:5000/zavalik-dev/joke-presentation:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           env:
+            - name: ASPNETCORE_URLS
+              value: http://*:8080
             - name: JOKEPROVIDER__URL
               value: http://joke-provider:5000

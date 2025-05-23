@@ -4,6 +4,12 @@ metadata:
   name: joke-provider
   namespace: zavalik-dev
 spec:
+  triggers:
+    - type: GitHub
+      github:
+        secret: mygithubsecret
+    - type: ConfigChange
+    - type: ImageChange
   source:
     git:
       uri: https://github.com/rzavalik/OpenShift.git

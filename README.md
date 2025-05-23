@@ -1,5 +1,10 @@
 # OpenShift Sample App: Joke Presentation + Joke Provider
 
+![OpenShift](https://img.shields.io/badge/deployed%20on-OpenShift-red)
+![.NET 8](https://img.shields.io/badge/.NET-8.0-blueviolet)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+
+
 This repository contains a complete demo of a containerized .NET 8 application deployed to OpenShift using:
 
 - ✅ Horizontal Pod Autoscaler (HPA)

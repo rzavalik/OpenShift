@@ -84,6 +84,10 @@ oc apply -f openshift/jokepresentation/hpa.yaml
 
 ### 5. Access the application
 
+Your deployment should look like this:
+
+![Topology](https://github.com/user-attachments/assets/abc4b55d-71c1-4de3-9af4-55a97deaa8f1)
+
 ```bash
 oc get route joke-presentation -o jsonpath='{.spec.host}'
 ```
